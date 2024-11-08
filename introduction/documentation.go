@@ -36,6 +36,26 @@ func main() {
 	m["uno"] = 1
 	m["dos"] = 2
 
+	// Mapear funciones (Mirar primero la sección de funciones)
+	var mapfunc = map[string]func(int, int) int{
+		"suma": func(a int, b int) int { return a + b },
+		"reta": func(a int, b int) int { return a - b },
+	}
+
+	mostrarResultadoMap := func(function string, x int, y int) {
+
+		f, exists := mapfunc[function]
+
+		if !exists {
+			fmt.Println("Operación no disponible")
+			return
+		}
+
+		fmt.Println("Para x =", x, "y y =", y, "la operación de", function, " resultante es", f(x, y))
+	}
+
+	mostrarResultadoMap("suma", 4, 6)
+
 	fmt.Println("Mapa:", m)
 	fmt.Println("Valor de 'uno':", m["uno"])
 
@@ -90,6 +110,17 @@ func main() {
 	fmt.Println("Suma:", resultado)
 	fmt.Println("Cociente:", cociente, "Resto:", resto)
 
+	// Funciones anónimas (Funciones dentro de funciones)
+	restar := func(x int, y int) int {
+		return x - y
+	}
+
+	result := restar(5, 2)
+	fmt.Println("La resta es igual a:", result)
+
+	// Utilizamos la func mostrarResultado
+	mostrarResultado("suma", 4, 8)
+
 	// 7. Estructuras y métodos (struct)
 	persona := Persona{"Juan", 30}
 	persona.saludar()
@@ -109,6 +140,29 @@ func sumar(a int, b int) int {
 // Función con múltiples valores de retorno
 func dividir(a int, b int) (int, int) {
 	return a / b, a % b
+}
+
+// *Funciones anónimas dentro de la func main*
+
+// Funciones como parámetros
+func mostrarResultado(function string, x int, y int) {
+	suma := func(x int, y int) int {
+		return x + y
+	}
+
+	resta := func(x int, y int) int {
+		return x - y
+	}
+
+	resultado := 0
+
+	if function == "suma" {
+		resultado = suma(x, y)
+	} else if function == "resta" {
+		resultado = resta(x, y)
+	}
+
+	fmt.Println("Para x =", x, "y y =", y, "la operación de", function, " resultante es", resultado)
 }
 
 // 7. Estructuras y métodos (struct)
