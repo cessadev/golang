@@ -36,7 +36,7 @@ func main() {
 	m["uno"] = 1
 	m["dos"] = 2
 
-	// Mapear funciones (Mirar primero la sección de funciones)
+	// Mapear funciones (Ver primero la sección de funciones)
 	var mapfunc = map[string]func(int, int) int{
 		"suma": func(a int, b int) int { return a + b },
 		"reta": func(a int, b int) int { return a - b },
