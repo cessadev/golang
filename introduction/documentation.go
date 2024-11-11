@@ -25,7 +25,7 @@ func main() {
 
 	fmt.Println("Arreglo:", arr)
 
-	// Slice (sin tamaño fijo, dinámico)
+	// Slice (Arreglo sin tamaño fijo - dinámico)
 	slice := []int{1, 2, 3, 4, 5, 6, 7}
 	slice = append(slice, 8) // Añadir elemento
 
