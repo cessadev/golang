@@ -13,8 +13,8 @@ Este proyecto es una REST API b√°sica construida en Golang utilizando la librer√
 1. **Clona el repositorio**:
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/cessadev/golang.git
+   cd golang
    ```
 
 2. **Instala las dependencias**:
